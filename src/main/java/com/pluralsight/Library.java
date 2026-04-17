@@ -18,7 +18,7 @@ public class Library {
         book[6] = new Book(7, "9780261102217", "the hobbit", false, "");
 
         Scanner scanner = new Scanner(System.in);
-        String name = getName(scanner);
+//        String name = getName(scanner);
 
         boolean exit = false;
 
@@ -76,7 +76,8 @@ public class Library {
         } else if (userInput <= numOfBook) {
 
 
-            String name = getName(scanner);
+//            String name = getName(scanner);
+            String name =
 
             System.out.println("Thank you " + name + " you choose " + book[userInput - 1].getTitle());
 
@@ -97,9 +98,9 @@ public class Library {
 
     }
 
-    public static String getName(Scanner scanner){
-        System.out.println("please enter your name");
-        return scanner.nextLine();
-    }
+//    public static String getName(Scanner scanner){
+//        System.out.println("please enter your name");
+//        return scanner.nextLine();
+//    }
 }
 
