@@ -61,7 +61,7 @@ public class Library {
         }
     }
 
-    // make a loop for each book chosen
+    // made a loop that asked the user for an input for the book they would like to put and if the input is == 0 it closes the loop
     public static void pickBook(Scanner scanner) {
 
         System.out.println("Enter the ID of the book you want to check out (0 to cancel): ");
