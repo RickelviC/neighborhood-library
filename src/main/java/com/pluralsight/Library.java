@@ -70,8 +70,6 @@ public class Library {
         int userInput = scanner.nextInt();
         scanner.nextLine();
 
-
-
         if (userInput == 0) {
             System.out.println("going back");
         } else if (userInput <= numOfBook) {
