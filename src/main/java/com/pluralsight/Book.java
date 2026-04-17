@@ -54,9 +54,10 @@ public class Book {
     public void setCheckedOutTo(String checkedOutTo) {
         this.checkedOutTo = checkedOutTo;
     }
+    
 
     @Override
     public String toString() {
-        return id + "|" + isbn  + "|" + title + "|" + isCheckedOut + "|" + checkedOutTo;
+        return id + " | " + isbn  + " | " + title + " | " + isCheckedOut + " | " + checkedOutTo;
     }
 }
