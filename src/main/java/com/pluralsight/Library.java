@@ -65,45 +65,24 @@ public class Library {
     // make a loop for each book chosen
     public static void pickBook(Scanner scanner) {
 
-
         System.out.println("Enter the ID of the book you want to check out (0 to cancel): ");
 
         int userInput = scanner.nextInt();
         scanner.nextLine();
 
-        System.out.println("please enter your name");
-        name = scanner.nextLine();
 
-        switch (userInput) {
-            case 0:
-                System.out.println("closing out of the application");
-                break;
-            case 1:
-                System.out.println("Thank you " + name + " you choose " + book[1].getTitle());
-                break;
-            case 2:
-                System.out.println("Thank you " + name + " you choose " + book[2].getTitle());
-                break;
-            case 3:
-                System.out.println("Thank you " + name + " you choose " + book[3].getTitle());
-                break;
-            case 4:
-                System.out.println("Thank you " + name + " you choose " + book[4].getTitle());
-                break;
-            case 5:
-                System.out.println("Thank you " + name + " you choose " + book[5].getTitle());
-                break;
-            case 6:
-                System.out.println("Thank you " + name + " you choose " + book[6].getTitle());
-                break;
-            case 7:
-                System.out.println("Thank you " + name + " you choose " + book[7].getTitle());
-                break;
-            default:
-                System.out.println("Not an option");
-                break;
+
+        if (userInput == 0) {
+            System.out.println("going back");
+        } else if (userInput <= numOfBook) {
+
+            System.out.println("please enter your name");
+            name = scanner.nextLine();
+
+            System.out.println("Thank you " + name + " you choose " + book[userInput - 1].getTitle());
+        } else {
+            System.out.println("Not an option");
         }
-
     }
 }
 
