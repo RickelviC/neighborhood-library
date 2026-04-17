@@ -68,6 +68,6 @@ public class Book {
 
     @Override
     public String toString() {
-        return id + " | " + isbn  + " | " + title + " | " + isCheckedOut + " | " + checkedOutTo;
+        return "Id: " + id + " | ISBN: " + isbn  + " | Title" + title;
     }
 }
