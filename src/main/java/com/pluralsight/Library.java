@@ -18,7 +18,6 @@ public class Library {
         book[5] = new Book(6, "9781416936473", "hatchet", false, name);
         book[6] = new Book(7, "9780261102217", "the hobbit", false, name);
 
-
         Scanner scanner = new Scanner(System.in);
 
         boolean exit = false;
