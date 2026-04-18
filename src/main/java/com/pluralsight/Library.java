@@ -52,7 +52,6 @@ public class Library {
                     break;
             }
         }
-
     }
 
     //shows every book
@@ -85,7 +84,6 @@ public class Library {
             System.out.println("Thank you " + name + " you choose " + book[userInput - 1].getTitle());
             System.out.println("---------------------------------------");
 
-
             book[userInput - 1].checkOut(name);
 
         } else {
@@ -102,7 +100,6 @@ public class Library {
                 System.out.println(book[i] + " -> " + book[i].getCheckedOutTo());
             }
         }
-
     }
 
     public static String getName(Scanner scanner) {
