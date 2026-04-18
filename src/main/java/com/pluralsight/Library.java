@@ -18,20 +18,22 @@ public class Library {
         book[6] = new Book(7, "9780261102217", "the hobbit", false, "");
 
         Scanner scanner = new Scanner(System.in);
-//        String name = getName(scanner);
 
         boolean exit = false;
 
         while (!exit) {
 
-            System.out.println("What do you want to do?");
+            System.out.println();
+            System.out.println("Store Home Screen");
+            System.out.println("---------------------------------------");
             System.out.println("  1 - Show Available Books");
             System.out.println("  2 - Show Checked Out Books");
             System.out.println("  3 - closes out of the application");
-            System.out.println("Enter your command:");
+            System.out.print("Enter your command (1-3): ");
 
             int userInput = scanner.nextInt();
             scanner.nextLine();
+            System.out.println();
 
             switch (userInput) {
                 case 1:
@@ -39,7 +41,7 @@ public class Library {
                     pickBook(scanner);
                     break;
                 case 2:
-                    checkedOutBook(scanner);
+                    checkedOutBook();
                     break;
                 case 3:
                     System.out.println("closing out of the application");
@@ -56,17 +58,20 @@ public class Library {
     //shows every book
     public static void listAllBooks() {
 
-        System.out.println("Books inventory:");
+        System.out.println("Available Books");
+        System.out.println("---------------------------------------");
 
         for (int i = 0; i < numOfBook; i++) {
             System.out.println(book[i]);
         }
+        System.out.println("---------------------------------------");
     }
 
-    // made a loop that asked the user for an input for the book they would like to put and if the input is == 0 it closes the loop
+    // made a loop that asked the user for an input for the book they would like to check out and if the input is == 0 it closes the loop
+    // also sets name to .checkOut when they do take out a book
     public static void pickBook(Scanner scanner) {
 
-        System.out.println("Enter the ID of the book you want to check out (0 to cancel): ");
+        System.out.print("Enter the ID of the book you want to check out (0 to cancel): ");
 
         int userInput = scanner.nextInt();
         scanner.nextLine();
@@ -75,11 +80,11 @@ public class Library {
             System.out.println("going back");
         } else if (userInput <= numOfBook) {
 
-
             String name = getName(scanner);
 
-
             System.out.println("Thank you " + name + " you choose " + book[userInput - 1].getTitle());
+            System.out.println("---------------------------------------");
+
 
             book[userInput - 1].checkOut(name);
 
@@ -88,18 +93,20 @@ public class Library {
         }
     }
 
-    public static void checkedOutBook(Scanner scanner){
+    public static void checkedOutBook() {
+        System.out.println("Checked Out Books");
+        System.out.println("---------------------------------------");
 
         for (int i = 0; i < numOfBook; i++) {
-            if(book[i].isCheckedOut()){
+            if (book[i].isCheckedOut()) {
                 System.out.println(book[i] + " -> " + book[i].getCheckedOutTo());
             }
         }
 
     }
 
-    public static String getName(Scanner scanner){
-        System.out.println("please enter your name");
+    public static String getName(Scanner scanner) {
+        System.out.print("please enter your name: ");
         return scanner.nextLine();
     }
 }
