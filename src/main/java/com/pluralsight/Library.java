@@ -42,6 +42,7 @@ public class Library {
                     break;
                 case 2:
                     checkedOutBook();
+                    checkInBook(scanner);
                     break;
                 case 3:
                     System.out.println("closing out of the application");
@@ -99,6 +100,22 @@ public class Library {
             if (book[i].isCheckedOut()) {
                 System.out.println(book[i] + " -> " + book[i].getCheckedOutTo());
             }
+        }
+    }
+
+    public static void checkInBook(Scanner scanner){
+        System.out.print("Press C to check in a book, or X to go back to Home Screen: ");
+
+        String userInput = scanner.nextLine();
+
+        if(userInput.equalsIgnoreCase("x")){
+            System.out.println("going back");
+        } else if (userInput.equalsIgnoreCase("c")) {
+            System.out.print("enter the id of the book you want to return: ");
+            int id = scanner.nextInt();
+            book[id -1].checkIn();
+        }else {
+            System.out.println("Not an option");
         }
     }
 
