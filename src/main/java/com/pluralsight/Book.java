@@ -57,17 +57,18 @@ public class Book {
         this.checkedOutTo = checkedOutTo;
     }
 
-    public void checkOut(String name){
+    public void checkOut(String name) {
         this.checkedOutTo = name;
         this.isCheckedOut = true;
     }
-    public void checkIn(){
+
+    public void checkIn() {
         this.checkedOutTo = "";
         this.isCheckedOut = false;
     }
 
     @Override
     public String toString() {
-        return "Id: " + id + " | ISBN: " + isbn  + " | Title: " + title;
+        return "Id: " + id + " | ISBN: " + isbn + " | Title: " + title;
     }
 }

@@ -103,18 +103,18 @@ public class Library {
         }
     }
 
-    public static void checkInBook(Scanner scanner){
+    public static void checkInBook(Scanner scanner) {
         System.out.print("Press C to check in a book, or X to go back to Home Screen: ");
 
         String userInput = scanner.nextLine();
 
-        if(userInput.equalsIgnoreCase("x")){
+        if (userInput.equalsIgnoreCase("x")) {
             System.out.println("going back");
         } else if (userInput.equalsIgnoreCase("c")) {
             System.out.print("enter the id of the book you want to return: ");
             int id = scanner.nextInt();
-            book[id -1].checkIn();
-        }else {
+            book[id - 1].checkIn();
+        } else {
             System.out.println("Not an option");
         }
     }
