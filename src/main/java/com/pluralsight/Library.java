@@ -76,8 +76,8 @@ public class Library {
         } else if (userInput <= numOfBook) {
 
 
-//            String name = getName(scanner);
-            String name =
+            String name = getName(scanner);
+
 
             System.out.println("Thank you " + name + " you choose " + book[userInput - 1].getTitle());
 
@@ -92,15 +92,15 @@ public class Library {
 
         for (int i = 0; i < numOfBook; i++) {
             if(book[i].isCheckedOut()){
-                System.out.println(book[i] + " -> " + name);
+                System.out.println(book[i] + " -> " + book[i].getCheckedOutTo());
             }
         }
 
     }
 
-//    public static String getName(Scanner scanner){
-//        System.out.println("please enter your name");
-//        return scanner.nextLine();
-//    }
+    public static String getName(Scanner scanner){
+        System.out.println("please enter your name");
+        return scanner.nextLine();
+    }
 }
 
