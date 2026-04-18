@@ -80,7 +80,7 @@ public class Library {
         scanner.nextLine();
 
         if (userInput == 0) {
-            System.out.println("going back");
+            System.out.println("going back to home screen");
         } else if (userInput <= numOfBook) {
 
             String name = getName(scanner);
@@ -91,7 +91,7 @@ public class Library {
             book[userInput - 1].checkOut(name);
 
         } else {
-            System.out.println("Not an option");
+            System.out.println("Not an option, going back to home screen");
         }
     }
 
