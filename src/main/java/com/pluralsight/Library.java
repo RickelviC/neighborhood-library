@@ -66,7 +66,6 @@ public class Library {
             if (!book[i].isCheckedOut()){
                 System.out.println(book[i]);
             }
-
         }
         System.out.println("---------------------------------------");
     }
@@ -108,24 +107,31 @@ public class Library {
     }
 
     public static void checkInBook(Scanner scanner) {
-        System.out.print("Press C to check in a book, or X to go back to Home Screen: ");
 
-        String userInput = scanner.nextLine();
+        for (int i = 0; i < numOfBook; i++) {
+            if (book[i].isCheckedOut()){
+                System.out.print("Press C to check in a book, or X to go back to Home Screen: ");
 
-        if (userInput.equalsIgnoreCase("x")) {
-            System.out.println("going back");
-        } else if (userInput.equalsIgnoreCase("c")) {
-            System.out.print("enter the id of the book you want to return: ");
-            int id = scanner.nextInt();
-            book[id - 1].checkIn();
-        } else {
-            System.out.println("Not an option");
+                String userInput = scanner.nextLine();
+
+                if (userInput.equalsIgnoreCase("x")) {
+                    System.out.println("going back");
+                } else if (userInput.equalsIgnoreCase("c")) {
+                    System.out.print("enter the id of the book you want to return: ");
+                    int id = scanner.nextInt();
+                    book[id - 1].checkIn();
+                } else {
+                    System.out.println("Not an option");
+                }
+            }
         }
+        System.out.println("No books have been checked out");
     }
 
     public static String getName(Scanner scanner) {
         System.out.print("please enter your name: ");
         return scanner.nextLine();
     }
+
 }
 
