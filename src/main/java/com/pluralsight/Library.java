@@ -62,7 +62,10 @@ public class Library {
         System.out.println("---------------------------------------");
 
         for (int i = 0; i < numOfBook; i++) {
-            System.out.println(book[i]);
+            if (!book[i].isCheckedOut()){
+                System.out.println(book[i]);
+            }
+
         }
         System.out.println("---------------------------------------");
     }
