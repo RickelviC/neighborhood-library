@@ -53,6 +53,7 @@ public class Library {
                     break;
             }
         }
+        scanner.close();
     }
 
     //shows every book
