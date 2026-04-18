@@ -56,7 +56,7 @@ public class Library {
         scanner.close();
     }
 
-    //shows every book
+    //shows every book that has not been checked out
     public static void listAllBooks() {
 
         System.out.println("Available Books");
@@ -106,6 +106,7 @@ public class Library {
         }
     }
 
+    // only runs when books have been checked out
     public static void checkInBook(Scanner scanner) {
 
         for (int i = 0; i < numOfBook; i++) {
