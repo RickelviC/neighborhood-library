@@ -63,7 +63,7 @@ public class Library {
         System.out.println("---------------------------------------");
 
         for (int i = 0; i < numOfBook; i++) {
-            if (!book[i].isCheckedOut()){
+            if (!book[i].isCheckedOut()) {
                 System.out.println(book[i]);
             }
         }
@@ -74,53 +74,33 @@ public class Library {
     // also sets name to .checkOut when they do take out a book
     public static void pickBook(Scanner scanner) {
 
-        System.out.print("Enter the ID of the book you want to check out (0 to cancel): ");
+        while (true) {
 
-        int userInput = scanner.nextInt();
-        scanner.nextLine();
-/*
-        if (userInput == 0) {
-            System.out.println("going back to home screen");
-        } else if (userInput <= numOfBook) {
+            System.out.print("Enter the ID of the book you want to check out (0 to cancel): ");
 
-            String name = getName(scanner);
+            int userInput = scanner.nextInt();
+            scanner.nextLine();
+            if (userInput == 0) {
+                System.out.println("Going back to home screen");
+                return;
+            } else if (userInput >= 1 && userInput <= numOfBook) {
+                if (book[userInput - 1].isCheckedOut()) {
+                    System.out.println("Book is Already checked out!");
+                    continue;
+                }
+                String name = getName(scanner);
 
-            System.out.println("Thank you " + name + " you choose " + book[userInput - 1].getTitle());
-            System.out.println("---------------------------------------");
+                System.out.println("Thank you " + name + " you choose " + book[userInput - 1].getTitle());
+                System.out.println("---------------------------------------");
 
-            book[userInput - 1].checkOut(name);
+                book[userInput - 1].checkOut(name);
 
-        } else {
-            System.out.println("Not an option, going back to home screen");
-        }*/
+                return;
 
-        if (userInput == 0) {
-            System.out.println("going back to home screen");
-        } else if (userInput > 0 && userInput <= numOfBook) {
-
-            String name = getName(scanner);
-
-            System.out.println("Thank you " + name + " you choose " + book[userInput - 1].getTitle());
-            System.out.println("---------------------------------------");
-
-            book[userInput - 1].checkOut(name);
-
-        } else {
-            System.out.println("Not an option");
-            pickBook(scanner);
-
+            } else {
+                System.out.println("Invalid id, please try again!");
+            }
         }
-
-        /*while (userInput < 0 || userInput > numOfBook ){
-
-            String name = getName(scanner);
-
-            System.out.println("Thank you " + name + " you choose " + book[userInput - 1].getTitle());
-            System.out.println("---------------------------------------");
-
-            book[userInput - 1].checkOut(name);
-        };*/
-
     }
 
     public static void checkedOutBook() {
@@ -138,7 +118,7 @@ public class Library {
     public static void checkInBook(Scanner scanner) {
 
         for (int i = 0; i < numOfBook; i++) {
-            if (book[i].isCheckedOut()){
+            if (book[i].isCheckedOut()) {
                 System.out.print("Press C to check in a book, or X to go back to Home Screen: ");
 
                 String userInput = scanner.nextLine();
@@ -161,6 +141,5 @@ public class Library {
         System.out.print("please enter your name: ");
         return scanner.nextLine();
     }
-
 }
 
