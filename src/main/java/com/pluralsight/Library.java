@@ -78,7 +78,7 @@ public class Library {
 
         int userInput = scanner.nextInt();
         scanner.nextLine();
-
+/*
         if (userInput == 0) {
             System.out.println("going back to home screen");
         } else if (userInput <= numOfBook) {
@@ -92,7 +92,35 @@ public class Library {
 
         } else {
             System.out.println("Not an option, going back to home screen");
+        }*/
+
+        if (userInput == 0) {
+            System.out.println("going back to home screen");
+        } else if (userInput > 0 && userInput <= numOfBook) {
+
+            String name = getName(scanner);
+
+            System.out.println("Thank you " + name + " you choose " + book[userInput - 1].getTitle());
+            System.out.println("---------------------------------------");
+
+            book[userInput - 1].checkOut(name);
+
+        } else {
+            System.out.println("Not an option");
+            pickBook(scanner);
+
         }
+
+        /*while (userInput < 0 || userInput > numOfBook ){
+
+            String name = getName(scanner);
+
+            System.out.println("Thank you " + name + " you choose " + book[userInput - 1].getTitle());
+            System.out.println("---------------------------------------");
+
+            book[userInput - 1].checkOut(name);
+        };*/
+
     }
 
     public static void checkedOutBook() {
